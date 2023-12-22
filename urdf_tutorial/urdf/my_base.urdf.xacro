@@ -17,6 +17,7 @@
         <color rgba="0.0 0.0 0.0 1.0" />
     </material>
     <!-- 底盘属性 -->
+    <xacro:property name="footprint_height" value="0.15" /> <!-- dipangaodu -->
     <xacro:property name="base_footprint_radius" value="0.001" /> <!-- base_footprint 半径  -->
     <xacro:property name="base_link_radius" value="0.1" /> <!-- base_link 半径 -->
     <xacro:property name="base_link_length" value="0.08" /> <!-- base_link 长 -->
@@ -56,7 +57,7 @@
     <joint name="base_link2base_footprint" type="fixed">
       <parent link="base_footprint" />
       <child link="base_link" />
-      <origin xyz="0 0 ${earth_space + base_link_length / 2 }" />
+      <origin xyz="0 0 ${footprint_height+earth_space + base_link_length / 2 }" />
     </joint>
     <gazebo reference="base_link">
         <material>Gazebo/Yellow</material>
